@@ -1,0 +1,61 @@
+.head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.head h1 {
+  color: rgb(0, 179, 0);
+}
+
+
+.head span {
+  font-size: 25px;
+  color: rgb(0, 126, 84);
+  font-weight: 800;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 50px 10px;
+}
+
+.tabs button {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 15px;
+  box-shadow: 5px 5px grey;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background-color: #f7d68e;
+}
+
+.tabs input{
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 5px 5px grey;
+}
+
+@media screen and (max-width: 700px) {
+    .head {
+      gap: 50px;
+      margin: 0px 0px;
+      padding: 10px 10px;
+      width: 136vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .head span{
+      font-size: 20px;
+    }
+  }

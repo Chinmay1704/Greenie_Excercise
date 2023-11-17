@@ -1,0 +1,41 @@
+.form-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.form-cont h1{
+    color: rgb(0, 126, 84);
+}
+
+.form-cont form{
+    padding: 20px;
+}
+
+.form-cont form td{
+    padding: 10px;
+}
+
+.form-cont input{
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+}
+
+
+
+.form-cont button{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    box-shadow: 5px 5px grey;
+    cursor: pointer;
+    text-align: center;
+}
+
+.form-cont button:hover{
+    background-color: #f7d68e;
+}

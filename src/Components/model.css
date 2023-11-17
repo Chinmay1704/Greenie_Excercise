@@ -1,0 +1,54 @@
+.bg-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.model {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 30px;
+  align-items: center;
+  background-color: rgb(216, 216, 216);
+  border-radius: 15px;
+  box-shadow: 5px 5px grey;
+}
+
+@media screen and (max-width: 500px) {
+  .model {
+    justify-content: left;
+    max-width: 70vw;
+  }
+}
+
+.model h2 {
+  padding: 5px 30px;
+}
+
+.model table {
+  position: relative;
+  padding: 5px 20px;
+}
+
+.model table td {
+  padding: 10px;
+}
+
+.model table tr:last-child {
+  text-align: center;
+}
+
+.model table button {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 15px;
+  box-shadow: 5px 5px grey;
+  cursor: pointer;
+}
+
+.model table button:hover{
+  background-color: #f7d68e;
+}
