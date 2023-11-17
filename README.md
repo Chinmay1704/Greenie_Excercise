@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Necessary requirements
 To run this project you have to make react app using
-###npm create-react-app name of your app
+### npm create-react-app name of your app
 
 then you have to replace all the files from your folder with files in this repository.
 
