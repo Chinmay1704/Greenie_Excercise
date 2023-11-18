@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserTable.css";
 
 var users = [
@@ -11,7 +11,7 @@ var users = [
   },
   {
     id: 2,
-    username: "ABC",
+    username: "test1",
     email: "john@example.com",
     phone: "123-456-7890",
     creationDate: "2023-01-02",
@@ -19,7 +19,7 @@ var users = [
 
   {
     id: 5,
-    username: "ABC",
+    username: "test1",
     email: "john@example.com",
     phone: "123-456-7890",
     creationDate: "2023-01-02",
@@ -27,14 +27,14 @@ var users = [
 
   {
     id: 3,
-    username: "CDE",
+    username: "test2",
     email: "john@example.com",
     phone: "123-456-7890",
     creationDate: "2023-01-03",
   },
   {
     id: 4,
-    username: "FGH",
+    username: "test3",
     email: "john@example.com",
     phone: "123-456-7890",
     creationDate: "2023-01-05",
@@ -42,24 +42,26 @@ var users = [
 ];
 
 
+const UserTable = () => {
 
-const UserTable = ({ onUserClick }) => {
-  let result = [];
-  let data = document.querySelector('#search').value;
-  function printValues() {
-    users.forEach((ele) => {
-      if (
-        ele.username.toLowerCase() ===
-        data.toLowerCase()
-      ) {
-        result.push(ele);
-      }
-      data = ""
-    });
-    return result;
+  var [res, setRes] = useState(users)
+  
+  function GetResult(e) {
+    let result = [];
+    var data = e.target.value;
+
+    if(data.length >= 1){
+      users.forEach((ele) => {
+        if (ele.username.toLocaleLowerCase() === data.toLocaleLowerCase()) {
+          result.push(ele);
+        }
+      });
+      setRes(result)
+    }
+    else{
+      setRes(users)
+    }
   }
-
-  console.log(printValues());
 
   return (
     <div className="main container-fluid">
@@ -68,13 +70,14 @@ const UserTable = ({ onUserClick }) => {
           <h1>User Details</h1>
 
           <div className="left container">
-            <input 
-            value={"."}
-              id="search"
+            <input
+              onChange={GetResult}
+              className="search"
               type="text"
               placeholder="Search UserName here."
             />
-            <button onClick={printValues}>
+
+            <button type="submit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="1.7em"
@@ -98,25 +101,15 @@ const UserTable = ({ onUserClick }) => {
             </thead>
 
             <tbody>
-              {result.length > 1
-                ? result.map((user) => (
-                    <tr key={user.id} onClick={() => onUserClick(user)}>
-                      <td>{user.id}</td>
-                      <td>{user.username}</td>
-                      <td>{user.email}</td>
-                      <td>{user.phone}</td>
-                      <td>{user.creationDate}</td>
-                    </tr>
-                  ))
-                : users.map((user) => (
-                    <tr key={user.id} onClick={() => onUserClick(user)}>
-                      <td>{user.id}</td>
-                      <td>{user.username}</td>
-                      <td>{user.email}</td>
-                      <td>{user.phone}</td>
-                      <td>{user.creationDate}</td>
-                    </tr>
-                  ))}
+              {res.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                  <td>{user.creationDate}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
