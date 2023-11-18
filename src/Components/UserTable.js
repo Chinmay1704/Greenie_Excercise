@@ -42,7 +42,7 @@ var users = [
 ];
 
 
-const UserTable = () => {
+const UserTable = ({ onUserClick }) => {
 
   var [res, setRes] = useState(users)
   
@@ -102,7 +102,7 @@ const UserTable = () => {
 
             <tbody>
               {res.map((user) => (
-                <tr key={user.id}>
+                <tr key={user.id} onClick={() => onUserClick(user)}>
                   <td>{user.id}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
