@@ -32,13 +32,10 @@
 .header input{
   font-size: 15px;
     border-radius: 15px;
-    padding: 10px 25px;
+    padding: 10px 45px;
     box-shadow: 5px 5px grey;
 }
 
-.header button{
-  border: none;
-}
 
 @media screen and (max-width: 700px) {
   .main {
